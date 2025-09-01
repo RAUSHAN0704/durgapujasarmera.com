@@ -2,105 +2,185 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Launching Soon</title>
+  <title>Website Launch</title>
   <style>
-    * {
+    body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-
-    body, html {
-      height: 100%;
-      font-family: Arial, sans-serif;
-    }
-
-    /* Background image */
-    .bg {
-      background: url("WhatsApp Image 2025-08-08 at 12.32.31 PM.jpeg") no-repeat center center;
-      background-size: contain;   /* <-- shows full image */
-      background-attachment: fixed;
-      background-color: black;    /* fills extra space */
-      height: 100%;
+      height: 100vh;
       width: 100%;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    /* Background image & stronger dim overlay + blur */
+    .background {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url('MataImage.png') no-repeat center center fixed;
+      background-size: cover;
+      filter: blur(2px); /* slight blur to reduce distraction */
+      z-index: 0;
+    }
+    .overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.90); /* stronger dim */
+      z-index: 1;
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-    }
-
-    /* Overlay */
-    .overlay {
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 40px 60px;
-      border-radius: 12px;
+      height: 100%;
       text-align: center;
       color: white;
+      padding: 0 16px;
+      margin-top: 50px;
     }
 
-    .overlay h1 {
-      font-size: 3rem;
+    /* Header */
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
       font-weight: bold;
-      margin-bottom: 20px;
+      color: #00FF00;; /* bright saffron */
+      text-shadow: 0 0 15px white, 0 0 30px #FFCC66;
+      background-color: rgba(0,0,0,0.7); /* slightly darker bg */
+      padding: 15px 25px;
+      border-radius: 12px;
+      animation: glow 1.5s ease-in-out infinite alternate;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 15px white, 0 0 30px #FF9933, 0 0 40px #FFCC66; }
+      to   { text-shadow: 0 0 25px white, 0 0 40px #FF9933, 0 0 50px #FF6600; }
     }
 
-    .overlay p {
-      font-size: 1.2rem;
+    /* Countdown */
+    #countdown {
+      font-size: 2rem;
+      margin-top: 1rem;
+      display: none;
+      font-weight: bold;
+      background: rgba(0,0,0,0.7); /* darker bg for contrast */
+      padding: 12px 25px;
+      border-radius: 12px;
+      background: linear-gradient(90deg, #FF4081, #f50057, #ff9100);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 15px white, 0 0 25px #FF4081;
+      animation: countdownGlow 2s ease-in-out infinite alternate;
+    }
+    @keyframes countdownGlow {
+      from { text-shadow: 0 0 15px white, 0 0 25px #FF4081; }
+      to   { text-shadow: 0 0 25px white, 0 0 35px #ff9100; }
     }
 
-    /* First, include Font Awesome for the web symbol */
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
-
-/* Animation for the link */
-.animate-link {
-    transition: all 0.3s ease;
-}
-
-.animate-link:hover {
-    color: #0056b3;
-    transform: scale(1.05);
-}
-
-/* Animation for the launch title */
-.launch-title {
-    animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
+    /* Rockets */
+    .rocket {
+      font-size: 2.5rem;
+      animation: bounce 1.5s infinite;
+      margin: 0 10px;
+      display: none;
+      text-shadow: 0 0 15px white;
     }
-    40% {
-        transform: translateY(-30px);
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
     }
-    60% {
-        transform: translateY(-15px);
-    }
-}
 
-/* Fade-in animation for the paragraph */
-.fade-in {
-    animation: fadeIn 2s ease-in;
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
+    /* Button */
+    button {
+      margin-top: 1rem;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      background: linear-gradient(45deg, #ff4081, #f50057);
+      color: white;
+      font-size: 1.1rem;
+      cursor: pointer;
+      box-shadow: 0 0 10px #ff4081, 0 0 20px #f50057;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
-    100% {
-        opacity: 1;
+    button:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 20px #ff4081, 0 0 40px #f50057;
     }
-}
   </style>
 </head>
 <body>
-  <div class="bg">
-    <div class="overlay">
-      <h2><i class="fa fa-globe"></i> <a href="https://durgapujasarmera.com" style="color: #007bff; text-decoration: none;" class="animate-link">durgapujasarmera.com</a></h2>
-<h2 class="launch-title">🚀 Launching Soon</h2>
-<p class="fade-in">Stay tuned, we are almost there!</p>
-<p class="fade-in">Courtesy : Durga Puja Samiti Sarmera</p>
+
+  <!-- Background & overlay -->
+  <div class="background"></div>
+  <div class="overlay"></div>
+
+  <!-- Foreground content -->
+  <div class="content">
+    <h1 id="launch-text">✨ Wait is Over! Our Website is Ready to Launch ✨</h1>
+
+    <div id="countdown-wrapper" style="display:flex; align-items:center; justify-content:center; margin-top: 10px;">
+      <span id="rocket-left" class="rocket">🚀</span>
+      <p id="countdown"></p>
+      <span id="rocket-right" class="rocket">🚀</span>
     </div>
+
+    <!-- Button -->
+    <button id="startBtn">Click here to know the launch time</button>
+
+    <!-- Background music -->
+    <audio id="bg-music" loop>
+      <source src="countdown-music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Launch music -->
+    <audio id="launch-music">
+      <source src="launch-sound.mp3" type="audio/mpeg">
+    </audio>
   </div>
+
+  <script>
+    document.getElementById("startBtn").addEventListener("click", function() {
+      // Start background music
+      document.getElementById("bg-music").play();
+
+      // Show countdown and rockets
+      document.getElementById("countdown").style.display = "block";
+      document.getElementById("rocket-left").style.display = "inline";
+      document.getElementById("rocket-right").style.display = "inline";
+
+      this.style.display = "none";
+
+      // Launch date: 2 Sept 2025, 20:00 IST (14:30 UTC)
+      const launchDate = new Date("2025-09-02T14:30:00Z").getTime();
+
+      const timer = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = launchDate - now;
+
+        if (distance <= 0) {
+          clearInterval(timer);
+          document.getElementById("bg-music").pause();
+          document.getElementById("launch-music").play();
+          setTimeout(() => {
+            window.location.href = "main.html";
+          }, 5000);
+        } else {
+          const hours = Math.floor(distance / (1000 * 60 * 60));
+          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          document.getElementById("countdown").innerHTML =
+            hours + "h " + minutes + "m " + seconds + "s ";
+        }
+      }, 1000);
+    });
+  </script>
+
 </body>
 </html>
