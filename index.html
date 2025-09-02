@@ -1,197 +1,753 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Website Launch</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      width: 100%;
-      font-family: Arial, sans-serif;
-      overflow: hidden;
-    }
 
-    /* Background images & overlay */
-    .background {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: url('MataImage.jpg') no-repeat center center fixed;
-      background-size: cover;
-      filter: blur(2px);
-      z-index: 0;
-    }
-    .overlay {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.90);
-      z-index: 1;
-    }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Durga Puja Samiti Sarmera </title>
 
-    .content {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
-      text-align: center;
-      color: white;
-      padding: 0 16px;
-      margin-top: 50px;
-    }
+  <!-- Favicon -->
+  <!-- <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico"> -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/banner/png/5.png">
 
-    h1 {
-      font-size: 5rem;
-      margin-bottom: 1rem;
-      font-weight: bold;
-      color: #2b00ff;
-      text-shadow: 0 0 15px white, 0 0 30px #FFCC66;
-      background-color: rgba(0,0,0,0.7);
-      padding: 15px 25px;
-      border-radius: 12px;
-      animation: glow 1.5s ease-in-out infinite alternate;
-    }
-    @keyframes glow {
-      from { text-shadow: 0 0 15px white, 0 0 30px #FF9933, 0 0 40px #FFCC66; }
-      to   { text-shadow: 0 0 25px white, 0 0 40px #FF9933, 0 0 50px #FF6600; }
-    }
+  <!-- partial:partial/__stylesheets.html -->
+  <link rel="stylesheet" href="assets/css/plugins/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/plugins/animate.min.css">
+  <link rel="stylesheet" href="assets/css/plugins/magnific-popup.css">
+  <link rel="stylesheet" href="assets/css/plugins/slick.css">
+  <link rel="stylesheet" href="assets/css/plugins/slick-theme.css">
+  <link rel="stylesheet" href="assets/css/plugins/ion.rangeSlider.min.css">
 
-    #countdown {
-      font-size: 4rem;
-      margin-top: 1rem;
-      display: none;
-      font-weight: bold;
-      background: linear-gradient(90deg, #FF4081, #f50057, #ff9100);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+  <!-- Icon Fonts -->
+  <link rel="stylesheet" href="assets/fonts/flaticon/flaticon.css">
+  <link rel="stylesheet" href="assets/css/plugins/font-awesome.min.css">
+  <!-- Template Style sheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <!-- partial -->
 
-    .rocket {
-      font-size: 2.5rem;
-      animation: bounce 1.5s infinite;
-      margin: 0 10px;
-      display: none;
-      text-shadow: 0 0 15px white;
-    }
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-    }
-
-    button {
-      margin-top: 1rem;
-      padding: 12px 24px;
-      border: none;
-      border-radius: 8px;
-      background: linear-gradient(45deg, #ff4081, #f50057);
-      color: white;
-      font-size: 1.1rem;
-      cursor: pointer;
-      box-shadow: 0 0 10px #ff4081, 0 0 20px #f50057;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    button:hover {
-      transform: scale(1.08);
-      box-shadow: 0 0 20px #ff4081, 0 0 40px #f50057;
-    }
-
-    /* Final countdown overlay for last 100 seconds */
-    #final-countdown {
-      display: none;
-      position: fixed;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 9999;
-      font-size: 12rem;
-      font-weight: bold;
-      color: #FF3D00;
-      text-shadow: 0 0 25px #fff, 0 0 50px #FF5722, 0 0 80px #FF9100;
-      animation: pulse 1s infinite alternate;
-      pointer-events: none;
-    }
-    @keyframes pulse {
-      from { opacity: 1; }
-      to { opacity: 0.7; }
-    }
-  </style>
 </head>
+
 <body>
-  <div class="background"></div>
-  <div class="overlay"></div>
 
-  <div class="content">
-    <h1 id="launch-text">✨ Wait is Over! Our Website is Ready to Launch ✨</h1>
+  <!-- Preloader Start -->
+  <div class="sigma_preloader">
+    <!-- <img src="assets/img/om.svg" alt="preloader"> -->
+    <img src="assets/img/banner/png/5.png" alt="preloader" loading="lazy">
+  </div>
+  <!-- Preloader End -->
 
-    <div id="countdown-wrapper" style="display:flex; align-items:center; justify-content:center; margin-top: 10px;">
-      <span id="rocket-left" class="rocket">🚀</span>
-      <p id="countdown"></p>
-      <span id="rocket-right" class="rocket">🚀</span>
+
+
+  <!-- partial:partia/__mobile-nav.html -->
+  <aside class="sigma_aside sigma_aside-left">
+
+    <a class="navbar-brand" href="index.html"> <img src="assets/img/logo.png" alt="logo" loading="lazy"> </a>
+
+    <!-- Menu -->
+    <ul>
+      <li class="menu-item"> <a href="about-us.html"> About Us </a> </li>
+      <li class="menu-item"> <a href="gallery.html"> Gallery </a> </li>
+      <li class="menu-item"> <a href="history.html"> History </a> </li>
+      <li class="menu-item"> <a href="members.html"> Members </a> </li>
+      <li class="menu-item"> <a href="volunteers.html"> Volunteers </a> </li>
+      <li class="menu-item"> <a href="contact-us.html"> Contact Us </a> </li>
+    </ul>
+
+  </aside>
+  <div class="sigma_aside-overlay aside-trigger-left"></div>
+  <!-- partial -->
+
+
+  <!-- partial:partia/__header.html -->
+  <header class="sigma_header header-3 can-sticky header-absolute">
+
+    <!-- Middle Header Start -->
+    <div class="sigma_header-middle">
+      <nav class="navbar">
+
+        <!-- Logo Start -->
+        <div class="sigma_logo-wrapper">
+          <a class="navbar-brand" href="index.html">
+            <img src="assets/img/logo.png" alt="logo" loading="lazy">
+          </a>
+        </div>
+        <!-- Logo End -->
+
+        <!-- Menu -->
+        <div class="sigma_header-inner">
+          <div class="d-flex justify-content-end justify-content-lg-end">
+            <ul class="navbar-nav">
+              <li class="menu-item"> <a href="about-us.html"> About Us </a> </li>
+              <li class="menu-item"> <a href="gallery.html"> Gallery </a> </li>
+              <li class="menu-item"> <a href="history.html"> History </a> </li>
+              <li class="menu-item"> <a href="members.html"> Members </a> </li>
+              <li class="menu-item"> <a href="volunteers.html"> Volunteers </a> </li>
+              <li class="menu-item"> <a href="contact-us.html"> Contact Us </a> </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="sigma_header-controls style-2">
+          <ul class="sigma_header-controls-inner">
+            <!-- Mobile Toggler -->
+            <li class="aside-toggler style-2 aside-trigger-left">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!-- Middle Header End -->
+
+  </header>
+  <!-- partial -->
+
+
+
+
+
+
+  <!-- Banner Start -->
+  <div class="sigma_banner banner-3">
+
+    <div class="sigma_banner-slider">
+
+      <!-- Banner Item Start -->
+      <div class="light-bg sigma_banner-slider-inner bg-cover bg-center bg-norepeat"
+        style="background-image: url('assets/img/banner/22.jpg'); background-position: top;">
+
+        <!-- Black overlay div -->
+        <div class="black-overlay"></div>
+
+        <div class="sigma_banner-text">
+          <div class="container">
+            <div class="row align-items-center justify-content-center">
+              <div class="col-12 col-md-10">
+                <h1 class="title text-center text-white text-shadow rozha-one-regular" style="font-size: 70px;"> दुर्गा
+                  पूजा समिति सरमेरा </h1>
+                <h2 class="fs-3 text-center text-white text-shadow rozha-one-regular"> नालंदा, बिहार </h2>
+                <p class="blockquote text-center mb-0 bg-transparent text-white" style="max-width: 100% !important;"> सन
+                  1937 से – माँ के चरणों में समर्पण और उत्सव की अद्भुत विरासत, जो हर वर्ष भक्ति, संस्कृति और आनंद की
+                  अनोखी छटा बिखेरते हुए हमारे समाज को एक सूत्र में पिरोती है
+                </p>
+                <div class="section-button d-flex align-items-center justify-content-center">
+                  <a href="about-us.html" class="sigma_btn-custom"> About Us <i class="far fa-arrow-right"></i> </a>
+                  <a href="contact-us.html" class="ms-3 sigma_btn-custom white"> Contact Us <i
+                      class="far fa-arrow-right"></i> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Banner Item End -->
+
+      <!-- Banner Item Start -->
+      <div class="light-bg sigma_banner-slider-inner bg-cover bg-center bg-norepeat"
+        style="background-image: url('assets/img/banner/44.jpg'); background-position: top;">
+        <!-- Black overlay div -->
+        <!-- <div class="black-overlay"></div> -->
+        <!-- <div class="sigma_banner-text">
+          <div class="container">
+            <div class="row align-items-center justify-content-center">
+              <div class="col-12 col-md-10">
+                <h1 class="title text-center text-white text-shadow"> Durga Puja Samiti Sarmera </h1>
+                <h2 class="fs-3 text-center text-white text-shadow"> Nalanda, Bihar </h2>
+                <p class="blockquote text-center mb-0 bg-transparent text-white" style="max-width: 100% !important;">
+                  Since 1937 – A magnificent legacy of devotion at the feet of the Mother, which each year spreads a
+                  unique aura of faith, culture, and joy, uniting our community as one.
+                </p>
+                <div class="section-button d-flex align-items-center justify-content-center">
+                  <a href="about-us.html" class="sigma_btn-custom"> About Us <i class="far fa-arrow-right"></i> </a>
+                  <a href="contact-us.html" class="ms-3 sigma_btn-custom white"> Contact Us <i
+                      class="far fa-arrow-right"></i> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+      </div>
+
+
+      <div class="light-bg sigma_banner-slider-inner bg-cover bg-center bg-norepeat"
+        style="background-image: url('assets/img/banner/mandir.jpeg'); background-position: top;">
+      </div>
+
+      <div class="light-bg sigma_banner-slider-inner bg-cover bg-center bg-norepeat"
+        style="background-image: url('assets/img/banner/banner12.jpeg'); background-position: top;">
+      </div>
+
+      <div class="light-bg sigma_banner-slider-inner bg-cover bg-center bg-norepeat"
+        style="background-image: url('assets/img/WhatsApp\ Image\ 2025-08-19\ at\ 12.42.19\ PM.jpeg'); background-position: top;">
+      </div>
+      <!-- Banner Item End -->
+
     </div>
 
-    <button id="startBtn">Click here to know the launch time</button>
+  </div>
+  <!-- Banner End -->
 
-    <audio id="bg-music" loop>
-      <source src="countdown-music.mp3" type="audio/mpeg">
-    </audio>
-    <audio id="launch-music">
-      <source src="launch-sound.mp3" type="audio/mpeg">
-    </audio>
+
+
+
+  <!-- About Start -->
+  <section class="section">
+    <div class="container">
+
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-lg-30">
+          <div class="h-img">
+            <img src="assets/img/mainImg/66.jpg" class="img-fluid rounded-3" loading="lazy" alt="maa image">
+            <p class="mt-2 text-muted">दुर्गा मंदिर की नींव — आस्था, संस्कृति और एकता का प्रतीक</p>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="me-lg-30">
+            <div class="section-title mb-0 text-start">
+              <!-- <h4 class="title rozha-one-regular"> भक्ति और सांस्कृतिक वैभव की विरासत </h4> -->
+              <h4 class="title rozha-one-regular"> हमारा इतिहास — सरमेरा दुर्गा पूजा समिति </h4>
+            </div>
+            <p class="blockquote bg-transparent">
+              सरमेरा दुर्गा पूजा समिति की स्थापना सरमेरा गढ़ के प्रबुद्ध भूमिहार समाज एवं अन्य समान विचारधारा वाले
+              व्यक्तियों के सामूहिक प्रयास से सन् 1937 में की गई थी। यह वह समय था जब देश स्वतंत्रता संग्राम की लहरों से
+              आंदोलित था,...
+            </p>
+
+            <a href="history.html" class="sigma_btn-custom light">Read More <i class="far fa-arrow-right"></i> </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- About End -->
+
+
+
+
+  <!-- volunteers Start -->
+  <div class="section bg-cover secondary-overlay bg-center bg-norepeat"
+    style="background-image: url(assets/img/bg2.jpg); padding:30px 0;">
+    <div class="container">
+
+      <div class="section-title text-center">
+        <h4 class="title text-white">समिति पदाधिकारी</h4>
+      </div>
+
+      <div class="d-flex justify-content-center flex-wrap gap-5">
+
+        <!-- President -->
+        <div class="sigma_volunteers volunteers-4 text-center">
+          <div class="sigma_volunteers-thumb">
+            <img src="/assets/img/adyakshcurrent2.png" alt="volunteers" class="officer-photo">
+          </div>
+          <div class="sigma_volunteers-body">
+            <p class="text-white mb-1">अध्यक्ष</p>
+            <h5 class="text-white">राधेश्याम विद्यार्थी</h5>
+          </div>
+        </div>
+
+        <!-- Secretary -->
+        <div class="sigma_volunteers volunteers-4 text-center">
+          <div class="sigma_volunteers-thumb">
+            <img src="assets/img/gautam12.jpeg" alt="volunteers" class="officer-photo">
+          </div>
+          <div class="sigma_volunteers-body">
+            <p class="text-white mb-1">सचिव</p>
+            <h5 class="text-white">शरत कुमार गौतम</h5>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
   </div>
 
-  <div id="final-countdown"></div>
+  <!-- volunteers End -->
 
-  <script>
-    const launchDate = new Date("2025-09-02T14:30:00Z").getTime();
-    const now = new Date().getTime();
 
-    // Immediate redirect if already past launch
-    if (now >= launchDate) {
-      window.location.href = "main.html";
-    }
 
-    document.getElementById("startBtn").addEventListener("click", function() {
-      document.getElementById("bg-music").play();
+  <!-- Puja Start -->
+  <div class="section section-padding">
+    <div class="container">
 
-      document.getElementById("countdown").style.display = "block";
-      document.getElementById("rocket-left").style.display = "inline";
-      document.getElementById("rocket-right").style.display = "inline";
-      this.style.display = "none";
+      <div class="row align-items-center">
+        <div class="col-12 col-md-4">
+          <h4 class="fs-2 fw-semibold mb-4"> दुर्गा पूजा 2025: <br> दिन-प्रतिदिन का कार्यक्रम (पहले दिन से) </h4>
+        </div>
+        <div class="col-12 col-md-8">
+          <img src="assets/img/mainImg/alldaysbanner.avif" alt="banner" class="img-fluid rounded-3 mb-5" loading="lazy">
+        </div>
+      </div>
 
-      const timer = setInterval(function() {
-        const now = new Date().getTime();
-        const distance = launchDate - now;
+      <div class="text-start">
+        <h4 class="mb-4">मुख्य दिनों और उनके पूर्व के महत्वपूर्ण आयोजनों का विस्तृत कार्यक्रम:</h4>
+      </div>
 
-        if (distance <= 0) {
-          clearInterval(timer);
-          document.getElementById("bg-music").pause();
-          document.getElementById("final-countdown").style.display = "none";
-          document.getElementById("launch-music").play();
-          // redirect immediately or after 1 second
-          window.location.href = "main.html";
-          // OR to wait 1 second: 
-          // setTimeout(() => { window.location.href = "main.html"; }, 1000);
-        } else {
-          const hours = Math.floor(distance / (1000 * 60 * 60));
-          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      <!-- Day 1 to Day 3 -->
+      <div class="allDays-schedule">
+        <div class="row align-items-center">
 
-          if (distance > 60000) { // normal countdown (>100s)
-            document.getElementById("countdown").innerHTML =
-              hours + "h " + minutes + "m " + seconds + "s ";
-          } else { // last 100 seconds dramatic countdown
-            document.getElementById("final-countdown").style.display = "block";
-            document.getElementById("final-countdown").innerHTML = seconds;
-            document.getElementById("countdown-wrapper").style.display = "none";
-            document.getElementById("launch-text").style.display = "none";
-          }
-        }
-      }, 1000);
-    });
-  </script>
+          <div class="col-12 col-xl-4">
+            <img src="assets/img/mainImg/alldaysbanner1.avif" alt="banner2"
+              class="d-none d-xl-block img-fluid rounded-3 mb-5" loading="lazy">
+          </div>
+
+          <div class="col-12 col-xl-8">
+            <div class="row">
+              <div class="col-12">
+                <div class="from1to10 mb-3">
+                  <div class="day border border-1 rounded-3 p-3">
+                    <h6 class="mb-2">दिन 1 – प्रतिपदा: 22 सितम्बर 2025 (सोमवार)</h6>
+                    <p class="mb-2">
+                      शारदीय नवरात्रि का पहला दिन घटस्थापना या कलश स्थापना से प्रारंभ होता है। यह माँ दुर्गा की शक्ति के
+                      आवाहन का प्रतीक है। भक्तजन जल से भरे कलश, आम के पत्ते और नारियल स्थापित करते हैं और नौ दिनों तक
+                      पूजा करते हैं। यह दिन दिव्य स्त्री शक्ति के जागरण का प्रतीक है और आगे होने वाली दुर्गा पूजा की
+                      नींव रखता है।
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="from1to10 mb-3">
+                  <div class="day border border-1 rounded-3 p-3">
+                    <h6 class="mb-2">दिन 2 – द्वितीया: 23 सितम्बर 2025 (मंगलवार)</h6>
+                    <p class="mb-2">
+                      इस दिन माँ ब्रह्मचारिणी की पूजा की जाती है, जो भक्ति, तपस्या और अनुशासन की प्रतीक हैं। उनके हाथों
+                      में जपमाला और कमंडलु होता है। भक्त उपवास करते हैं और ध्यान करते हैं, जिससे आत्मबल और आध्यात्मिक
+                      उन्नति प्राप्त हो। दीप प्रज्ज्वलन और मंत्रोच्चार द्वारा माँ से शक्ति और पवित्रता की कामना की जाती
+                      है।
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="from1to10 mb-3">
+                  <div class="day border border-1 rounded-3 p-3">
+                    <h6 class="mb-2">दिन 3 – तृतीया: 24 सितम्बर 2025 (बुधवार)</h6>
+                    <p class="mb-2">
+                      इस दिन माँ चंद्रघंटा की पूजा होती है, जो साहस और सौंदर्य की प्रतीक हैं। उनके मस्तक पर अर्धचंद्र और
+                      वाहन सिंह होता है। उनकी उपासना से भय और विघ्न दूर होते हैं। भक्त पुष्प, फल अर्पित करते हैं और
+                      शांति व वीरता की प्राप्ति के लिए प्रार्थना करते हैं।
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 4 to Day 6 -->
+      <div class="allDays-schedule">
+        <div class="row align-items-center">
+
+          <div class="col-12 col-xl-4">
+            <img src="assets/img/mainImg/alldaysbanner2.avif" alt="banner2"
+              class="d-none d-xl-block img-fluid rounded-3 mb-5" loading="lazy">
+          </div>
+
+          <div class="col-12 col-xl-8">
+            <div class="row">
+              <div class="col-12">
+                <div class="from1to10 mb-3">
+                  <div class="day border border-1 rounded-3 p-3">
+                    <h6 class="mb-2">दिन 4 – चतुर्थी: 25 सितम्बर 2025 (गुरुवार)</h6>
+                    <p class="mb-2">
+                      यह दिन माँ कूष्मांडा को समर्पित है, जिनकी मुस्कान से सृष्टि की उत्पत्ति हुई। वे जीवन और
+                      ब्रह्मांडीय ऊर्जा की स्रोत मानी जाती हैं। इस दिन दीप जलाए जाते हैं और विशेष भोग अर्पित किए जाते
+                      हैं। उनकी पूजा से स्वास्थ्य, समृद्धि और सुख की प्राप्ति होती है।
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="from1to10 mb-3">
+                  <div class="day border border-1 rounded-3 p-3">
+                    <h6 class="mb-2">दिन 5 – पंचमी: 26 सितम्बर 2025 (शुक्रवार)</h6>
+                    <p class="mb-2">
+                      इस दिन माँ स्कंदमाता की पूजा की जाती है, जो भगवान कार्तिकेय की माता हैं। वे मातृ शक्ति और करुणा का
+                      प्रतीक हैं। उनकी पूजा से ज्ञान, शक्ति और मोक्ष की प्राप्ति होती है। इस दिन भक्त फूल और मिठाई
+                      अर्पित करते हैं और माता-पुत्र की संयुक्त आराधना करते हैं।
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="from1to10 mb-3">
+                  <div class="day border border-1 rounded-3 p-3">
+                    <h6 class="mb-2">दिन 6 – महापंचमी: 27 सितम्बर 2025 (शनिवार)</h6>
+                    <p class="mb-2">
+                      इस दिन से दुर्गा पूजा का औपचारिक प्रारंभ माना जाता है। ‘बिल्व निमंत्रण’ की रस्म की जाती है, जिसमें
+                      माँ दुर्गा का आमंत्रण दिया जाता है। यह दिन देवी के पृथ्वी पर आगमन और असुर विनाश की शुरुआत का
+                      प्रतीक है। पंडाल सजाए जाते हैं और भक्ति का वातावरण बनता है।
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 7 to Day 9 -->
+      <div class="allDays-schedule">
+        <div class="row align-items-center">
+
+          <div class="col-12 col-xl-4">
+            <img src="assets/img/mainImg/alldaysbanner4.avif" alt="banner2"
+              class="d-none d-xl-block img-fluid rounded-3 mb-5" loading="lazy">
+          </div>
+
+          <div class="col-12 col-xl-8">
+            <div class="row">
+              <div class="col-12">
+                <div class="from1to10 mb-3">
+                  <div class="day border border-1 rounded-3 p-3">
+                    <h6 class="mb-2">दिन 7 – महाषष्ठी: 28 सितम्बर 2025 (रविवार)</h6>
+                    <p class="mb-2">
+                      महाषष्ठी के दिन देवी की प्रतिमा का उद्घाटन होता है। इस दिन कल्पारंभ, बोधन, आमंत्रण और अधिवास जैसी
+                      रस्में होती हैं। भक्त माँ दुर्गा का स्वागत मंत्र, फूल और धूप से करते हैं। यह दिन देवी के मायके
+                      आगमन और भक्ति-उत्सव के चरम की शुरुआत का प्रतीक है।
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="from1to10 mb-3">
+                  <div class="day border border-1 rounded-3 p-3">
+                    <h6 class="mb-2">दिन 8 – महासप्तमी: 29 सितम्बर 2025 (सोमवार)</h6>
+                    <p class="mb-2">
+                      महासप्तमी के दिन नबपत्रिका (कोलाबौ पूजा) होती है, जिसमें नौ पौधों को नदी में स्नान कराकर देवी के
+                      समीप रखा जाता है। यह उर्वरता और समृद्धि का प्रतीक है। इस दिन फूल, नृत्य और संगीत से माँ की पूजा
+                      होती है।
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="from1to10 mb-3">
+                  <div class="day border border-1 rounded-3 p-3">
+                    <h6 class="mb-2">दिन 9 – महाअष्टमी: 30 सितम्बर 2025 (मंगलवार)</h6>
+                    <p class="mb-2">
+                      महाअष्टमी दुर्गा पूजा का सबसे महत्वपूर्ण दिन है। इस दिन कुमारी पूजा और संधि पूजा की जाती है। यह
+                      क्षण देवी दुर्गा की महिषासुर पर विजय का प्रतीक है। ढाक-ढोल, मंत्र और भोग अर्पण से यह दिन पूर्ण
+                      भक्तिभाव से मनाया जाता है।
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 10 and Day 11 -->
+      <div class="allDays-schedule">
+        <div class="row">
+
+          <div class="col-12 col-xl-4">
+            <img src="assets/img/mainImg/alldaysbanner5.avif" alt="banner2"
+              class="d-none d-xl-block img-fluid rounded-3 mb-5" loading="lazy">
+          </div>
+
+          <div class="col-12 col-xl-8">
+            <div class="row">
+              <div class="col-12">
+                <div class="from1to10 mb-3">
+                  <div class="day border border-1 rounded-3 p-3">
+                    <h6 class="mb-2">दिन 10 – महानवमी: 1 अक्टूबर 2025 (बुधवार)</h6>
+                    <p class="mb-2">
+                      महानवमी के दिन देवी दुर्गा की विजय यात्रा का चरम होता है। इस दिन महाआरती, बलिदान और नवमी होम किया
+                      जाता है। भक्त शांति, सुरक्षा और समृद्धि की प्रार्थना करते हैं। यह दिन देवी के विदाई की तैयारी का
+                      सूचक है।
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="from1to10 mb-3">
+                  <div class="day border border-1 rounded-3 p-3">
+                    <h6 class="mb-2">दिन 11 – विजयादशमी: 2 अक्टूबर 2025 (गुरुवार)</h6>
+                    <p class="mb-2">
+                      विजयादशमी के दिन भक्त माँ दुर्गा को विदाई देते हैं। प्रतिमा विसर्जन होता है, जो देवी के कैलाश
+                      लौटने का प्रतीक है। महिलाएँ सिंदूर खेला करती हैं, जो शक्ति और सौभाग्य का प्रतीक है। यह दिन अच्छाई
+                      की बुराई पर विजय और अगले वर्ष देवी के पुनः आगमन की आशा का प्रतीक है।
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Puja End -->
+
+
+
+  <!-- CTA Start -->
+  <div class="section pt-0">
+    <div class="container">
+      <div class="section-title text-center">
+        <h4 class="title"> Contact Us</h4>
+      </div>
+
+      <div class="row align-items-center position-relative">
+        <div class="col-md-6">
+          <div class="sigma_cta primary-bg">
+            <img class="d-none d-lg-block" src="assets/img/cta/1.png" alt="cta" loading="lazy">
+            <div class="sigma_cta-content">
+              <span class="fw-600 custom-primary">Need Help, Call Our HOTLINE!</span>
+              <h4 class="text-white">+91 9135021200</h4>
+            </div>
+          </div>
+        </div>
+        <span class="sigma_cta-sperator d-none d-lg-flex"></span>
+        <div class="col-md-6">
+          <div class="sigma_cta primary-bg">
+            <img class="d-none d-lg-block" src="assets/img/cta/1.png" alt="cta" loading="lazy">
+            <div class="sigma_cta-content">
+              <span class="fw-600 custom-primary">Need Help, Call Our HOTLINE!</span>
+              <h4 class="text-white">  durgapujasarmera@gmail.com </h4>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="col-md-6">
+          <div class="sigma_cta primary-bg">
+            <div class="sigma_cta-content">
+              <form method="post">
+                <label class="mb-0 text-white"></label>
+                <div class="sigma_search-adv-input">
+                  <input type="text" class="form-control" placeholder="Enter email address" name="search" value="">
+                  <button type="submit" name="button"><i class="fa fa-search"></i></button>
+                </div>
+              </form>
+            </div>
+            <img class="d-none d-lg-block" src="assets/img/cta/2.png" alt="cta" loading="lazy">
+          </div>
+        </div> -->
+      </div>
+
+    </div>
+  </div>
+  <!-- CTA End -->
+
+
+
+  <!-- Blog Start -->
+  <div class="section section-padding primary-overlay bg-cover bg-center"
+    style="background-image: url(assets/img/banner/44.jpg)">
+    <div class="container">
+
+      <div class="section-title text-center">
+        <h4 class="title text-white">Gallery</h4>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          <article class="sigma_post">
+            <div class="sigma_post-thumb">
+              <a href="#">
+                <img src="assets/img/blog/11.jpg" class="img-fluid rounded-3" alt="post" loading="lazy">
+              </a>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <article class="sigma_post">
+            <div class="sigma_post-thumb">
+              <a href="#">
+                <img src="assets/img/mainImg/6.jpg" class="img-fluid rounded-3" alt="post" loading="lazy">
+              </a>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <article class="sigma_post">
+            <div class="sigma_post-thumb">
+              <a href="#">
+                <img src="assets/img/mainImg/99.jpg" class="img-fluid rounded-3" alt="post" loading="lazy">
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <a href="gallery.html" class="sigma_btn-custom ">View More <i class="far fa-arrow-right"></i> </a>
+
+    </div>
+  </div>
+  <!-- Blog End -->
+
+
+  <!-- Back To Top Start -->
+  <div class="sigma_top style-5">
+    <i class="far fa-angle-double-up"></i>
+  </div>
+  <!-- Back To Top End -->
+
+  <!-- Audio Box Start -->
+
+  <!-- <div class="sigma_audio-box">
+    <div id="audio-btn">
+      <i class="fa fa-play"> </i>
+      <i class="fa fa-music"></i>
+    </div>
+  </div> -->
+
+  <!-- Audio Box End -->
+
+  <!-- partial:partia/__footer.html -->
+  <footer class="sigma_footer footer-2">
+
+    <!-- Middle Footer -->
+    <div class="sigma_footer-middle">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-5 col-lg-4 col-md-4 col-sm-12 footer-widget">
+            <h5 class="widget-title">About Us</h5>
+            <p class="mb-4">
+              सन 1937 से – माँ के चरणों में समर्पण और उत्सव की अद्भुत विरासत, जो हर वर्ष भक्ति, संस्कृति और आनंद की
+              अनोखी छटा बिखेरते हुए हमारे समाज को एक सूत्र में पिरोती है|
+            </p>
+            <p class="mb-4">
+              सरमेरा दुर्गा पूजा समिति की स्थापना सरमेरा गढ़ के प्रबुद्ध भूमिहार समाज एवं अन्य समान विचारधारा वाले
+              व्यक्तियों के सामूहिक प्रयास से सन् 1937 में की गई थी। यह वह समय था जब देश स्वतंत्रता संग्राम की लहरों से
+              आंदोलित था, और ऐसे काल में सांस्कृतिक चेतना को अक्षुण्ण बनाए रखना एक चुनौती थी...
+            </p>
+          </div>
+          <div class="col-xl-3 col-lg-2 col-md-4 col-sm-12 footer-widget ">
+            <h5 class="widget-title ps-lg-5">Important Links</h5>
+            <ul class="ps-lg-5">
+              <li>
+                <!-- <i class="fas fa-om"></i> -->
+                <a href="about-us.html"> About Us</a>
+              </li>
+              <li>
+                <!-- <i class="fas fa-om"></i> -->
+                <a href="history.html">History</a>
+              </li>
+              <li>
+                <!-- <i class="fas fa-om"></i> -->
+                <a href="gallery.html">Gallery</a>
+              </li>
+              <li>
+                <!-- <i class="fas fa-om"></i> -->
+                <a href="members.html">Members</a>
+              </li>
+              <li>
+                <!-- <i class="fas fa-om"></i> -->
+                <a href="volunteers.html">Volunteers</a>
+              </li>
+              <li>
+                <!-- <i class="fas fa-om"></i> -->
+                <a href="contact-us.html">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-xl-4 col-lg-4 col-md-3 col-sm-12 d-none d-lg-block footer-widget widget-recent-posts">
+            <h5 class="widget-title"> Contact Info </h5>
+            <div class="d-flex align-items-center justify-content-md-start justify-content-center">
+              <i class="far fa-phone custom-primary me-3"></i>
+              <span>+91 9135021200</span>
+            </div>
+            <div class="d-flex align-items-center justify-content-md-start justify-content-center mt-2">
+              <i class="far fa-envelope custom-primary me-3"></i>
+              <span>Heymohitraj@gmail.com</span>
+            </div>
+            <div class="d-flex align-items-center justify-content-md-start justify-content-center mt-2">
+              <i class="far fa-map-marker custom-primary me-3"></i>
+              <span>Sarmera Garh, Sarmera, Nalanda, 811104</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="sigma_footer-bottom">
+      <div class="container-fluid">
+        <div class="sigma_footer-copyright">
+          <p> Copyright © Durga Puja Samiti Sarmera - <a href="#" class="custom-primary">2025</a> </p>
+        </div>
+        <div class="sigma_footer-logo">
+          <img src="assets/img/logo.png" class="img-fluid" width="200" alt="logo" loading="lazy">
+        </div>
+        <ul class="sigma_sm square">
+          <li>
+            <a href="#">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </footer>
+  <!-- partial -->
+
+  <!-- partial:partia/__scripts.html -->
+  <script src="assets/js/plugins/jquery-3.4.1.min.js"></script>
+  <script src="assets/js/plugins/popper.min.js"></script>
+  <script src="assets/js/plugins/bootstrap.min.js"></script>
+  <script src="assets/js/plugins/imagesloaded.min.js"></script>
+  <script src="assets/js/plugins/jquery.magnific-popup.min.js"></script>
+  <script src="assets/js/plugins/jquery.countdown.min.js"></script>
+  <script src="assets/js/plugins/jquery.waypoints.min.js"></script>
+  <script src="assets/js/plugins/jquery.counterup.min.js"></script>
+  <script src="assets/js/plugins/jquery.zoom.min.js"></script>
+  <script src="assets/js/plugins/jquery.inview.min.js"></script>
+  <script src="assets/js/plugins/jquery.event.move.js"></script>
+  <script src="assets/js/plugins/wow.min.js"></script>
+  <script src="assets/js/plugins/isotope.pkgd.min.js"></script>
+  <script src="assets/js/plugins/slick.min.js"></script>
+  <script src="assets/js/plugins/ion.rangeSlider.min.js"></script>
+
+  <script src="assets/js/main.js"></script>
+  <!-- partial -->
+
 </body>
+
 </html>
