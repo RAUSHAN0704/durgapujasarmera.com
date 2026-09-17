@@ -10968,3 +10968,63 @@ small {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   /* हल्का shadow */
 }
+
+/* ============================================================
+   Gallery grid — uniform, structured photo tiles
+   Scoped to gallery.html (.gImg .gallery-thumb)
+   ============================================================ */
+.gImg .gallery-thumb {
+  display: block;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  transition: box-shadow .3s ease, transform .3s ease;
+}
+
+.gImg .gallery-thumb img {
+  width: 100%;
+  height: 100%;
+  /* Uniform tile shape regardless of the source photo's ratio */
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform .4s ease;
+}
+
+.gImg .gallery-thumb:hover {
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.22);
+  transform: translateY(-4px);
+}
+
+.gImg .gallery-thumb:hover img {
+  transform: scale(1.08);
+}
+
+/* Subtle gradient overlay on hover for depth */
+.gImg .gallery-thumb::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, .28), rgba(0, 0, 0, 0) 45%);
+  opacity: 0;
+  transition: opacity .3s ease;
+  pointer-events: none;
+}
+
+.gImg .gallery-thumb:hover::after {
+  opacity: 1;
+}
+
+/* Consistent vertical rhythm between rows */
+.gImg {
+  margin-bottom: 24px;
+}
+
+/* Fallback for browsers without aspect-ratio support */
+@supports not (aspect-ratio: 4 / 3) {
+  .gImg .gallery-thumb img {
+    height: 260px;
+  }
+}
