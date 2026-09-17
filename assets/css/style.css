@@ -11028,3 +11028,177 @@ small {
     height: 260px;
   }
 }
+
+/* ============================================================
+   Square logo (logo-new.jpg) — height-based sizing so the
+   1:1 logo fits the header/aside slots without overflowing.
+   ============================================================ */
+/* Header navbar brand: size by height, let width follow the square ratio */
+.sigma_logo-wrapper .navbar-brand,
+.header-2 .sigma_logo-wrapper .navbar-brand {
+  width: auto;
+}
+
+.sigma_logo-wrapper .navbar-brand img {
+  height: 80px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* Mobile side-nav (aside) logo */
+.sigma_aside .navbar-brand img {
+  height: 64px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Footer logo: keep it tidy and proportional */
+.sigma_footer .navbar-brand img,
+footer .navbar-brand img {
+  height: auto;
+  max-width: 160px;
+  object-fit: contain;
+}
+
+@media (max-width: 991px) {
+  .sigma_logo-wrapper .navbar-brand img {
+    height: 60px;
+  }
+}
+
+/* ============================================================
+   Homepage restructure — hero date badge + key-dates glance strip
+   Scoped, additive; reuses theme primary color.
+   ============================================================ */
+
+/* Hero date badge */
+.hero-datebadge {
+  margin: 18px 0 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.hero-datebadge .hero-year {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+.hero-datebadge .hero-dates {
+  display: inline-block;
+  background: var(--themeColor, #d81a1a);
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  padding: 8px 22px;
+  border-radius: 40px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+@media (max-width: 767px) {
+  .hero-datebadge .hero-dates { font-size: 18px; padding: 6px 16px; }
+  .hero-datebadge .hero-year { font-size: 16px; }
+}
+
+/* Key-dates glance strip */
+#key-dates .keydates-row { margin-top: 8px; }
+#key-dates .keydate-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  height: 100%;
+  padding: 20px 12px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+#key-dates .keydate-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+#key-dates .keydate-tithi {
+  font-size: 15px;
+  font-weight: 600;
+  color: #555;
+}
+#key-dates .keydate-date {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--themeColor, #d81a1a);
+  line-height: 1.2;
+}
+#key-dates .keydate-day {
+  font-size: 13px;
+  color: #888;
+}
+#key-dates .keydate-highlight {
+  background: var(--themeColor, #d81a1a);
+  border-color: var(--themeColor, #d81a1a);
+}
+#key-dates .keydate-highlight .keydate-tithi,
+#key-dates .keydate-highlight .keydate-date,
+#key-dates .keydate-highlight .keydate-day {
+  color: #fff;
+}
+@media (min-width: 992px) {
+  #key-dates .col-lg { flex: 1 0 0%; }
+}
+
+/* Location section */
+#location .location-info {
+  padding: 28px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+#location .location-info a { color: inherit; text-decoration: none; }
+#location .location-info a:hover { color: var(--themeColor, #d81a1a); }
+#location .location-map {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  line-height: 0;
+  height: 100%;
+}
+#location .location-map iframe { display: block; width: 100%; min-height: 360px; }
+
+/* Horizontal scrollable teaser strip (Volunteers) */
+.scroll-strip {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  padding: 8px 4px 20px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+.scroll-strip::-webkit-scrollbar { height: 8px; }
+.scroll-strip::-webkit-scrollbar-thumb { background: rgba(0,0,0,.18); border-radius: 8px; }
+.scroll-card {
+  flex: 0 0 auto;
+  width: 200px;
+  scroll-snap-align: start;
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,.08);
+  transition: transform .25s ease, box-shadow .25s ease;
+  text-decoration: none;
+}
+.scroll-card:hover { transform: translateY(-6px); box-shadow: 0 10px 26px rgba(0,0,0,.14); }
+.scroll-card-thumb { width: 100%; aspect-ratio: 1 / 1; overflow: hidden; }
+.scroll-card-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s ease; }
+.scroll-card:hover .scroll-card-thumb img { transform: scale(1.06); }
+.scroll-card-body { padding: 12px 14px; text-align: center; }
+.scroll-card-body h6 { margin: 0 0 4px; font-size: 15px; color: #222; }
+.scroll-card-body span { font-size: 12.5px; color: #8a8a8a; }
+@media (max-width: 575px) { .scroll-card { width: 160px; } }
+
+/* Light variant for dark-background strip (Samiti Padadhikari) */
+.scroll-strip-light::-webkit-scrollbar-thumb { background: rgba(255,255,255,.4); }
