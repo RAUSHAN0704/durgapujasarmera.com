@@ -94,11 +94,26 @@
   $('.popup-youtube').magnificPopup({ type: 'iframe' });
   $('.popup-vimeo').magnificPopup({ type: 'iframe' });
   $('.popup-video').magnificPopup({ type: 'iframe' });
-  $('.gallery-thumb').magnificPopup({
+
+  // Lightbox: bind each gallery grid separately so every year is its own
+  // swipe-gallery, with captions pulled from each image's alt text.
+  $('.gallery-grid').each(function () {
+    $(this).magnificPopup({
+      delegate: 'a.gallery-thumb',
+      type: 'image',
+      gallery: { enabled: true, navigateByImgClick: true, preload: [0, 2] },
+      image: {
+        titleSrc: function (item) {
+          return item.el.find('img').attr('alt') || '';
+        }
+      }
+    });
+  });
+
+  // Fallback for any stray thumbs not inside a .gallery-grid
+  $('.gallery-thumb').not('.gallery-grid a').magnificPopup({
     type: 'image',
-    gallery: {
-      enabled: true
-    }
+    gallery: { enabled: true }
   });
 
   /*-------------------------------------------------------------------------------
@@ -291,6 +306,19 @@
   $('.masonry').imagesLoaded(function () {
     var isotopeContainer = $('.masonry');
     isotopeContainer.isotope({ itemSelector: '.masonry-item' });
+  });
+
+  // Gallery page: masonry layout for each year grid so mixed
+  // portrait/landscape photos tile without gaps.
+  $('.gallery-grid').each(function () {
+    var $grid = $(this);
+    $grid.imagesLoaded(function () {
+      $grid.isotope({
+        itemSelector: '.gallery-item',
+        percentPosition: true,
+        layoutMode: 'masonry'
+      });
+    });
   });
 
   /*------------------------------------------------------------------------------
